@@ -21,12 +21,12 @@ window.addEventListener('load', function(){
         if(tipoDocumento.value === null || tipoDocumento.value.trim() === '' ||
             numeroDocumento.value === null || numeroDocumento.value.trim() === '' ||
             password.value === null || password.value.trim() === ''){
-                mostrarAlerta("Error: Debe completar completamente sus credenciales", msgError);
+                mostrarAlerta("Error: Debe completar completamente sus credenciales");
                 return;
         }
         ocultarAlerta();
 
-        //consumir action
+        //consumir action del mvc
         autenticar();
 
     });
@@ -40,11 +40,11 @@ function mostrarAlerta(mensaje) {
   
   function ocultarAlerta() {
     msgError.innerHTML = '';
-    msgError.style.display = 'none';
-  }
+    msgError.style.display = 'none';
+}
 
 async function autenticar(){
-    const url = 'http://localhost:8090/login/autenticar-async';
+    const url = 'http://localhost:8081/login/autenticar-async';
     const data = {
         tipoDocumento: tipoDocumento.value,
         numeroDocumento: numeroDocumento.value,
@@ -60,7 +60,7 @@ async function autenticar(){
             body: JSON.stringify(data)
         });
 
-        if(response.ok) {
+        if(!response.ok) {
             mostrarAlerta('Error: Ocurrio un problema en la autenticacion');
             throw new Error(`Error: ${response.statusText}`);
         }
