@@ -5,7 +5,7 @@ window.addEventListener('load', function(){
     
     // recuperar nombre del usuario del localStorage
     const result = JSON.parse(this.localStorage.getItem('result'));
-    mostrarAlerta(result.nombreUsuario);
+    mostrarAlerta(`Bienvenido ${result.nombreUsuario}`);
     
 });
 
