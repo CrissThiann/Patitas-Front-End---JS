@@ -1,3 +1,22 @@
 .container{
     width: 1000px;
  }
+
+
+ #btnLogOut {
+    background-color: #E31437; /* Rojo */   
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.5s ease; /* Transiciones suaves */
+  }
+
+  #btnLogOut:active {
+    transform: translateY(10px); /* Efecto de hundimiento */
+    box-shadow: none; /* Eliminar sombra cuando se hunde */
+  }
+
+   

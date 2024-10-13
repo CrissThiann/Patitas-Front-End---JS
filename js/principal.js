@@ -1,3 +1,5 @@
+import Swal from 'sweetalert2';
+
 window.addEventListener('load', function(){
 
     //referenciar elementos de la pagina
@@ -11,6 +13,7 @@ window.addEventListener('load', function(){
     //implementar listener
     btnLogOut.addEventListener('click', function(){
         logOut(btnLogOut);
+        Swal.fire("Cerrando Sesion...");
     });
     
 });
