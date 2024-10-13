@@ -53,6 +53,7 @@ async function autenticar() {
   };
 
   try {
+
     const response = await fetch(url, {
       method: "POST",
       headers: {
@@ -72,6 +73,10 @@ async function autenticar() {
 
     if (result.codigo === "00") {
       localStorage.setItem("result", JSON.stringify(result));
+      localStorage.setItem("tipoDocumento", tipoDocumento.value);
+      localStorage.setItem("numeroDocumento", numeroDocumento.value);
+
+
       window.location.replace("principal.html");
     } else {
       mostrarAlerta(result.mensaje);
