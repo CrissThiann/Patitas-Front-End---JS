@@ -29,7 +29,7 @@ function mostrarAlerta(mensaje) {
   }
 
   async function logOut() {
-    const url = 'http://localhost:8081/login/logout-async';
+    const url = 'http://localhost:8081/logout/logout-feign';
     const data = {
       tipoDocumento: localStorage.getItem('tipoDocumento'),
       numeroDocumento: localStorage.getItem('numeroDocumento'),
